@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+<h:head>
+    <h:outputStylesheet library="css" name="index.css"/>
+</h:head>
+<h:body styleClass="content">
+    <h:form styleClass="form-car">
+        <h:outputLabel value="ID"/>
+        <h:inputText name="id" binding="#{id}"/>
+
+        <h:outputLabel value="MAN"/>
+        <h:inputText name="man" binding="#{man}"/>
+
+        <h:outputLabel value="mod"/>
+        <h:inputText name="mod" binding="#{model}"/>
+
+        <h:outputLabel value="license"/>
+        <h:inputText name="license" binding="#{license}"/>
+
+        <h:commandButton value="Add"
+                         type="submit"
+                         styleClass="button"
+                         onclick="#{carService.create(id.value, man.value, model.value, license.value)}"/>
+    </h:form>
+
+    <h:button styleClass="button" value="to main" outcome="index"/>
+</h:body>
+</html>

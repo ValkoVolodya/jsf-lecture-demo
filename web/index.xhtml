@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+   <h:head>
+      <h:outputStylesheet library="css" name="index.css"/>
+   </h:head>
+   <h:body styleClass="content">
+      <h:dataTable value="#{carService.selectAll()}"
+                   var="cs"
+                   styleClass=""
+                   rowClasses=""
+                   >
+         <h:column>
+            <f:facet name="header">
+               Car Id
+            </f:facet>
+            #{cs.getId()}
+         </h:column>
+
+         <h:column>
+            <f:facet name="header">
+               Manufacturer
+            </f:facet>
+            #{cs.getManufacturer()}
+         </h:column>
+
+         <h:column>
+            <f:facet name="header">
+               Model
+            </f:facet>
+            #{cs.getModel()}
+         </h:column>
+
+         <h:column>
+            <f:facet name="header">
+               License
+            </f:facet>
+            #{cs.getLicense()}
+         </h:column>
+
+      </h:dataTable>
+
+      <h:button styleClass="button" value="add" outcome="form"/>
+
+   </h:body>
+</html>
