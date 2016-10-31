@@ -25,7 +25,7 @@
         <h:commandButton value="Add"
                          type="submit"
                          styleClass="button"
-                         onclick="#{carService.create(id.value, man.value, model.value, license.value)}"/>
+                         action="#{carService.create(id.value, man.value, model.value, license.value)}"/>
     </h:form>
 
     <h:button styleClass="button" value="to main" outcome="index"/>
